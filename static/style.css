@@ -1,0 +1,34 @@
+:root { --green:#2f6b3a; --bg:#f4f7f2; --ink:#1d2b1f; --line:#d6e0d3; }
+* { box-sizing: border-box; }
+body { margin:0; font:15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); }
+.top { display:flex; justify-content:space-between; align-items:center; padding:10px 18px; background:var(--green); color:#fff; }
+.top a { color:#fff; text-decoration:none; margin-left:14px; }
+.brand { font-weight:700; margin-left:0 !important; }
+.who { margin-left:14px; opacity:.8; font-size:13px; }
+form.inline { display:inline; }
+button.link { background:none; border:0; color:#fff; cursor:pointer; margin-left:14px; font:inherit; text-decoration:underline; }
+.flash { max-width:900px; margin:12px auto; padding:0 18px; }
+.flash p { background:#fff4d6; border:1px solid #ecd48a; padding:8px 12px; border-radius:6px; margin:6px 0; }
+.card { background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px; }
+.narrow { max-width:380px; margin:48px auto; }
+main.card { max-width:900px; margin:24px auto; }
+label { display:block; margin:12px 0; font-weight:600; }
+input { display:block; width:100%; margin-top:4px; padding:9px; border:1px solid #b9c7b6; border-radius:6px; font:inherit; }
+button[type=submit] { background:var(--green); color:#fff; border:0; padding:10px 18px; border-radius:6px; cursor:pointer; font:inherit; }
+.muted { color:#5d6b5f; }
+.layout { display:grid; grid-template-columns: 1fr 440px; gap:14px; padding:14px; height:calc(100vh - 56px); }
+.mapwrap { display:flex; flex-direction:column; min-height:0; }
+#map { flex:1; border-radius:10px; border:1px solid var(--line); min-height:320px; }
+.hint { margin:8px 2px 0; color:#5d6b5f; font-size:13px; }
+#panel { overflow:auto; min-height:0; }
+#panel h2 { margin-top:0; }
+#panel h3 { margin:18px 0 6px; color:var(--green); border-bottom:1px solid var(--line); padding-bottom:3px; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; padding:5px 6px; border-bottom:1px solid #eef2ec; }
+th { background:#f0f5ee; }
+.best { font-weight:700; }
+.pair { background:#f6faf4; border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin:8px 0; }
+.pair p { margin:4px 0; }
+.src, .disclaimer { font-size:12px; color:#5d6b5f; }
+.disclaimer { margin-top:16px; border-top:1px solid var(--line); padding-top:8px; }
+@media (max-width: 860px) { .layout { grid-template-columns:1fr; height:auto; } #map { height:55vh; } }

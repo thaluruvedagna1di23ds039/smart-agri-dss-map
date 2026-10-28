@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+<main class="card narrow">
+  <h1>Create account</h1>
+  <form method="post">
+    <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+    <label>Email <input type="email" name="email" required autocomplete="username"></label>
+    <label>Password (min 8 characters) <input type="password" name="password" required minlength="8" autocomplete="new-password"></label>
+    <button type="submit">Register</button>
+  </form>
+  <p class="muted">Already registered? <a href="{{ url_for('login') }}">Log in</a></p>
+</main>
+{% endblock %}

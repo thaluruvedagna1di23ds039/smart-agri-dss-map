@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Map analysis{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+{% endblock %}
+{% block body %}
+<div class="layout">
+  <section class="mapwrap">
+    <div id="map"></div>
+    <p class="hint">Click anywhere on farmland. Weather and soil are fetched automatically. No typing needed.</p>
+  </section>
+  <aside id="panel" class="card">
+    <h2>Results</h2>
+    <p id="status" class="muted">Click the map to start.</p>
+    <div id="out" hidden>
+      <h3>Location data</h3>
+      <table id="t-inputs"></table>
+      <p class="src" id="srcs"></p>
+
+      <h3>Crop yield prediction</h3>
+      <p class="best" id="best"></p>
+      <table id="t-rank"></table>
+
+      <h3>Intercrop suggestions</h3>
+      <div id="inter"></div>
+
+      <h3>Crop rotation plan</h3>
+      <ol id="rot"></ol>
+
+      <h3>Nutrient recovery from organic materials</h3>
+      <p id="nut-head" class="muted"></p>
+      <table id="t-nut"></table>
+
+      <p class="disclaimer">Indicative decision support only. The yield model is trained on a synthetic
+      agronomic dataset (<span id="mdl"></span>). Confirm with your local agriculture extension officer.</p>
+    </div>
+  </aside>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block body %}
+<main class="card">
+  <h1>Your previous analyses</h1>
+  {% if items %}
+  <table>
+    <thead><tr><th>Date (UTC)</th><th>Location</th><th>Best crop</th><th>Predicted yield (t/ha)</th></tr></thead>
+    <tbody>
+    {% for it in items %}
+      <tr>
+        <td>{{ it.created }}</td>
+        <td>{{ '%.4f'|format(it.lat) }}, {{ '%.4f'|format(it.lon) }}</td>
+        <td>{{ it.best }}</td>
+        <td>{{ it.yield_t_ha }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p class="muted">Nothing yet. Go to the <a href="{{ url_for('index') }}">map</a> and click a field location.</p>
+  {% endif %}
+</main>
+{% endblock %}
